@@ -39,8 +39,6 @@ var quotesList = [
 doShuffle(quotesList);
 
 function displayQuote() {
-    quote.style.transform = "translateX(100%)"
-
     if (index < quotesList.length) {
         quote.innerHTML = ` <div class="quote  border-top border-bottom border-opacity-10">
                             <h3 class="mt-3">“${quotesList[index].quote}”</h3>
@@ -51,21 +49,18 @@ function displayQuote() {
         index = 0;
         displayQuote();
     }
-    quote.style.transform = "translateX(0)"
-
 }
 
 
 // Function to apply the Fisher-Yates Shuffle
 function doShuffle(array) {
-    // Iterate over the array in reverse order
     for (var i = array.length - 1; i > 0; i--) {
 
-        // Generate Random Index
         var j = Math.floor(Math.random() * (i + 1));
 
-        // Swap elements
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
 }
+
+console.log("testing vercel");
